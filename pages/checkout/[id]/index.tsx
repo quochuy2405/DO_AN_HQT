@@ -56,10 +56,10 @@ const CheckoutPage = () => {
           if (refButton.current === 'banking')
             router.push(`/checkout/${router.query.id}/payment/banking`)
         })
-        .catch((errors) => {
-          const message = errors.response.data?.message
-          console.log(errors)
-          dispatch(
+        .catch(async (errors) => {
+          const message = await errors.response.data?.message
+
+          await dispatch(
             setLoading({
               status: true,
               mode: 'error',
