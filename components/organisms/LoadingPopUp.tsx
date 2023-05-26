@@ -11,7 +11,7 @@ const LoadingPopUp = () => {
       {loading.status && (
         <div className="fixed top-0 bottom-0 right-0 left-0 z-[99999]">
           <div className="bg-[#a5a5a576] h-screen w-screen absolute top-0 flex items-center justify-center z-50">
-            <div className="bg-white h-fit w-fit p-3 rounded-lg flex items-center justify-center shadow-sm">
+            <div className="bg-white h-fit w-fit min-h-[24vh] min-w-[24vh] p-3 rounded-lg flex items-center justify-center shadow-sm">
               <Loading title={loading.title} mode={loading.mode} />
             </div>
           </div>

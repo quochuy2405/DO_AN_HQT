@@ -9,7 +9,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { getDistrict, getProvinces, getWards } from 'apis'
 import { createOrders } from 'apis/checkout'
 import { deleteCookie, getCookie } from 'cookies-next'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ReactElement, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
@@ -56,27 +55,26 @@ const CheckoutPage = () => {
           if (refButton.current === 'banking')
             router.push(`/checkout/${router.query.id}/payment/banking`)
         })
-        .catch(async (errors) => {
-          const message = await errors.response.data?.message
-
-          await dispatch(
+        .catch((errors) => {
+          const message = errors.response.data?.message
+          console.log(message)
+          dispatch(
             setLoading({
-              status: true,
               mode: 'error',
               title: (
-                <>
+                <div>
                   <p>{message || 'Tạo đơn hàng lỗi!'}</p>
-                  <Link
-                    href="/"
+                  <div
                     onClick={() => {
                       deleteCookie('checkout_id')
                       dispatch(closeLoading())
+                      router.push('/')
                     }}
                     className="w-36 mx-auto mt-3 flex gap-1 justify-center items-center text-sm rounded-md bg-black py-2 font-medium text-blue-50 hover:bg-gray-700"
                   >
                     Về trang chủ
-                  </Link>
-                </>
+                  </div>
+                </div>
               )
             })
           )

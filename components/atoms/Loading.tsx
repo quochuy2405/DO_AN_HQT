@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import React, { ReactNode } from 'react'
 export interface LoadingProps {
-  title?: ReactNode
+  title?: ReactNode | string
   className?: string
   mode?: 'default' | 'success' | 'error' | 'mail'
 }
