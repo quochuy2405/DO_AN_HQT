@@ -35,7 +35,7 @@ const ProductOverviewPage = () => {
             const imageRef = ref(
               storage,
               'products/' +
-                product.imageName
+                product.imagename
                   .trim()
                   .normalize('NFD')
                   .replace(/[\u0300-\u036f]/g, '')

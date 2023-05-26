@@ -1,7 +1,7 @@
 export type ProductType = {
   id?: string
   name: string
-  imageName: string
+  imagename: string
   sizes: Array<string> | string
   imagesURL?: Array<string>
   price: number

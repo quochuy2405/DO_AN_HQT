@@ -1,7 +1,7 @@
 export type StockType = {
   quantity: number
   category: string
-  imageName: string
+  imagename: string
   imageURL?: string
   id?: string
 }

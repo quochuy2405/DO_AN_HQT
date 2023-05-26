@@ -1,7 +1,6 @@
 'use client'
 import { ProductType } from '@/types/product'
 import { RadioGroup } from '@headlessui/react'
-import { StarIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import Link from 'next/link'
 import { enqueueSnackbar } from 'notistack'
@@ -12,7 +11,7 @@ const breadcrumbs = [
   { id: 2, name: 'Sản phẩm', href: '#' }
 ]
 
-const reviews = { href: '#', average: 4, totalCount: 117 }
+// const reviews = { href: '#', average: 4, totalCount: 117 }
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -133,7 +132,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ addToCart, data }) =>
             <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
               <div className="flex items-center">
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   {[0, 1, 2, 3, 4].map((rating) => (
                     <StarIcon
                       key={rating}
@@ -144,14 +143,14 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ addToCart, data }) =>
                       aria-hidden="true"
                     />
                   ))}
-                </div>
-                <p className="sr-only">{reviews.average} out of 5 stars</p>
+                </div> */}
+                {/* <p className="sr-only">{reviews.average} out of 5 stars</p>
                 <Link
                   href={reviews.href}
                   className="ml-3 text-sm font-medium text-black hover:text-indigo-500"
                 >
                   {reviews.totalCount} reviews
-                </Link>
+                </Link> */}
               </div>
             </div>
 

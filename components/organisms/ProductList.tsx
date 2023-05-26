@@ -30,7 +30,7 @@ const ProductList: React.FC<ProductListProps> = ({ id, title }) => {
           const imageRef = ref(
             storage,
             'products/' +
-              item.imageName
+              item.imagename
                 .trim()
                 .normalize('NFD')
                 .replace(/[\u0300-\u036f]/g, '')
